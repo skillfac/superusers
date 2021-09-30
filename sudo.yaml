@@ -1,0 +1,27 @@
+- name: add users with sudo privelegues
+  hosts: nana-test
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: add group
+      group:
+        name: superadmin
+
+    - name: add users
+      user: name=user1 shell=/bin/bash comment="for the super group" groups="superadmin"
+
+    - name: add users
+      user: name=user2 shell=/bin/bash comment="for the super group" groups="superadmin"
+
+
+    - name: add users
+      user: name=user3 shell=/bin/bash comment="for the super group" groups="superadmin"
+
+
+
+
+    - name: sudo without password for superadmin group
+      copy:
+       content: '%superadmin ALL=(ALL:ALL) NOPASSWD:ALL'
+       dest: /etc/sudoers.d/superadmin_nopasswd
+       mode: 0440
