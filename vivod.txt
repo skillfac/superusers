@@ -1,0 +1,26 @@
+student@ubuntu18:~/playbooks_nana$ ansible-playbook users_sudo.yaml
+[WARNING]: Invalid characters were found in group names but not replaced, use -vvvv to see
+details
+
+PLAY [add users with sudo privelegues] *******************************************************
+
+TASK [Gathering Facts] ***********************************************************************
+ok: [192.16.1.11]
+
+TASK [add group] *****************************************************************************
+ok: [192.16.1.11]
+
+TASK [add users] *****************************************************************************
+changed: [192.16.1.11]
+
+TASK [add users] *****************************************************************************
+changed: [192.16.1.11]
+
+TASK [add users] *****************************************************************************
+changed: [192.16.1.11]
+
+TASK [sudo without password for wheel group] *************************************************
+changed: [192.16.1.11]
+
+PLAY RECAP ***********************************************************************************
+192.16.1.11                : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
